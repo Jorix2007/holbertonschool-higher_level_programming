@@ -9,25 +9,16 @@ def roman_to_int(roman_string):
     Returns:
         The integer value of the Roman numeral, or 0 if input is invalid.
     """
-    # 1. Handle edge cases
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
-
-    # 2. Map Roman numerals to integers
     roman_dict = {
         'I': 1, 'V': 5, 'X': 10, 'L': 50,
         'C': 100, 'D': 500, 'M': 1000
     }
-
     total = 0
     length = len(roman_string)
-
-    # 3. Iterate through the string
     for i in range(length):
-        # Using .get() gracefully handles unexpected characters by defaulting to 0
         current_val = roman_dict.get(roman_string[i], 0)
-        
-        # 4. Check if the next character exists AND is larger
         if i + 1 < length and current_val < roman_dict.get(roman_string[i + 1], 0):
             total -= current_val
         else:
