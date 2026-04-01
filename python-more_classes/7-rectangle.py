@@ -55,12 +55,12 @@ class Rectangle:
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-            """Returns a string of the rectangle using print_symbol."""
-            if self.__width == 0 or self.__height == 0:
-                return ""
-            # Ensure there are no spaces after the '#' or at the end of this line
-            row = str(self.print_symbol) * self.__width
-            return "\n".join([row for _ in range(self.__height)])
+        """Returns a string of the rectangle using print_symbol."""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        row = str(self.print_symbol) * self.__width
+        return "\n".join([row for _ in range(self.__height)])
+
     def __repr__(self):
         """Returns a string to recreate the instance."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
