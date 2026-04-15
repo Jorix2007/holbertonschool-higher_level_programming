@@ -8,7 +8,7 @@ import math
 
 class Shape(ABC):
     """
-    Abstract base class for shapes.
+    Abstract base class for geometric shapes.
     """
 
     @abstractmethod
@@ -77,6 +77,10 @@ class Rectangle(Shape):
 def shape_info(shape):
     """
     Prints the area and perimeter of a shape using duck typing.
+    
+    This function relies on the fact that the passed object behaves like
+    a Shape (having area() and perimeter() methods) without strictly 
+    checking its type.
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
