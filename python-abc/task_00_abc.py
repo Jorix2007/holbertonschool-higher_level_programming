@@ -9,6 +9,7 @@ class Animal(ABC):
     """
     Abstract base class representing a generic Animal.
     """
+
     @abstractmethod
     def sound(self):
         """
@@ -16,19 +17,23 @@ class Animal(ABC):
         Returns the sound of the animal.
         """
         pass
+
 class Dog(Animal):
     """
     Dog subclass that inherits from Animal.
     """
-    def spound(self):
+
+    def sound(self):
         """
         Returns the sound made by a dog.
         """
         return "Bark"
+
 class Cat(Animal):
     """
     Cat subclass that inherits from Animal.
     """
+
     def sound(self):
         """
         Returns the sound made by a cat.
